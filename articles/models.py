@@ -13,6 +13,7 @@ class Articles(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     description = models.TextField()
+    thumbnail = models.ImageField(upload_to="Images", null=True)
     publish = models.DateTimeField(default=timezone.now)
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
