@@ -8,4 +8,4 @@ this is a project for exercise Django framework
 - [x] Set a base template model for templates
 - [ ] Change panel admin language to persian
 - [ ] Make single article page
-- [ ] Show all articles in databse in articles.html page
+- [x] Show all articles in databse in articles.html page

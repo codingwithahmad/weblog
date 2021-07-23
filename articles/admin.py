@@ -4,4 +4,4 @@ from .models import Articles
 
 @admin.register(Articles)
 class ArticlesAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title', 'author', 'status', 'publish',)

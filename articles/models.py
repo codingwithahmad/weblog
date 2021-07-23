@@ -18,3 +18,7 @@ class Articles(models.Model):
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES)
+
+    def __str__(self):
+        return self.title
+        
