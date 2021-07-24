@@ -11,7 +11,9 @@
     </div>
     <div class="col">
       <h3 class="title mb-1">
-        <a class="text-link" href="blog-post.html">{{ article.title }}</a>
+        <a class="text-link" href="{% url 'articles:details' article.slug %}"
+          >{{ article.title }}</a
+        >
       </h3>
       <div class="meta mb-1">
         <span class="date">{{ article.publish }}</span
@@ -21,7 +23,9 @@
         >
       </div>
       <div class="intro">{{ article.description| truncatewords:30 }}</div>
-      <a class="text-link" href="blog-post.html">Read more &rarr;</a>
+      <a class="text-link" href="{% url 'articles:details' article.slug %}"
+        >Read more &rarr;</a
+      >
     </div>
     <!--//col-->
     {% endfor %}

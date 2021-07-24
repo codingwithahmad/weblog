@@ -7,5 +7,5 @@ this is a project for exercise Django framework
 - [x] Set a template for home page
 - [x] Set a base template model for templates
 - [ ] Change panel admin language to persian
-- [ ] Make single article page
+- [x] Make single article page
 - [x] Show all articles in databse in articles.html page
