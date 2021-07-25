@@ -10,4 +10,4 @@ this is a project for exercise Django framework
 - [x] Make single article page
 - [x] Show all articles in databse in articles.html page
 - [ ] Make Category model
-- [ ] Make date from Gregorian date Jalali
+- [ ] Change date from Gregorian date Jalali
