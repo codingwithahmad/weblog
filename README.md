@@ -9,5 +9,8 @@ this is a project for exercise Django framework
 - [x] Change panel admin language to persian
 - [x] Make single article page
 - [x] Show all articles in databse in articles.html page
-- [ ] Make Category model
+- [x] Make Category model
+- [x] Add Category to admin pandel and Articles model
+- [ ] Show categoreis in frontend
+- [ ] Make a page for showing each category articles
 - [x] Change date from Gregorian date to Jalali
