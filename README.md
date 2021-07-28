@@ -13,4 +13,5 @@ this is a project for exercise Django framework
 - [x] Add Category to admin pandel and Articles model
 - [ ] Show categoreis in frontend
 - [ ] Make a page for showing each category articles
+- [x] Make parent field for Category model
 - [x] Change date from Gregorian date to Jalali

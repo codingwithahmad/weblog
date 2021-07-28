@@ -14,6 +14,7 @@ class ArticlesAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('position', 'title', 'slug', 'status')
+    list_display = ('position', 'title', 'slug', 'parent', 'status')
     search_fields = ('title', 'slug')
     list_filter = (['status'])
+    
