@@ -11,7 +11,8 @@ this is a project for exercise Django framework
 - [x] Show all articles in databse in articles.html page
 - [x] Make Category model
 - [x] Add Category to admin pandel and Articles model
-- [ ] Show categoreis in frontend
+- [x] Show categoreis in frontend
+- [ ] link categories names in to articles that category contain
 - [ ] Make a page for showing each category articles
 - [x] Make parent field for Category model
 - [x] Change date from Gregorian date to Jalali
