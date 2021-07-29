@@ -1,7 +1,9 @@
 {% for cat in category %}
 <nav class="navbar navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{ cat.title }}</a>
+    <a class="navbar-brand" href="{% url 'articles:category' cat.slug %}"
+      >{{ cat.title }}</a
+    >
   </div>
 </nav>
 {% endfor %}
