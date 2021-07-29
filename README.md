@@ -14,6 +14,7 @@ this is a project for exercise Django framework
 - [x] Show categoreis in frontend
 - [ ] link categories names in to articles that category contain
 - [ ] Make a page for showing each category articles
+- [x] Make config.py for security items and add it to .gitignore
 - [x] Make parent field for Category model
 - [x] Change date from Gregorian date to Jalali
-- [ ] Change fonts
+- [x] Change fonts
