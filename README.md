@@ -17,4 +17,5 @@ this is a project for exercise Django framework
 - [x] Make config.py for security items and add it to .gitignore
 - [x] Make parent field for Category model
 - [x] Change date from Gregorian date to Jalali
+- [x] Make category_loop.file file and include that in navbar_category.html file whit loop
 - [x] Change fonts
