@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Articles, Category
 
 
-# Create your views here.
+# Create your views here
 def home(request):
     content = {
         "articles": Articles.objects.all()

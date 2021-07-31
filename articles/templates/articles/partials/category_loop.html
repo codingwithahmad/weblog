@@ -1,10 +1,8 @@
-<nav class="navbar navbar-light">
-  {% for cat in cat.children.all %}
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'articles:category' cat.slug %}">{{ cat.title }}</a>
-    {% if cat.children.all %}
-      {% include 'articles/partials/category_loop.html' %} 
-    {% endif %}
-  </div>
-  {% endfor %}
-</nav>
+{% for cat in cat.children.all %}
+<div class="dropdown-container">
+  <a href="{% url 'articles:category' cat.slug %}">{{ cat.title }}</a>
+  {% if cat.children.all %}
+  {% include 'articles/partials/category_loop.html' %}
+  {% endif %}
+</div>
+{% endfor %}

@@ -2,6 +2,8 @@
 
 this is a project for exercise Django framework
 
+#TODO
+
 - [x] Make article model
 - [x] Fix url patterns for artcles app
 - [x] Set a template for home page
@@ -19,3 +21,4 @@ this is a project for exercise Django framework
 - [x] Change date from Gregorian date to Jalali
 - [x] Make category_loop.file file and include that in navbar_category.html file with loop
 - [x] Change fonts
+- [x] Change the template
