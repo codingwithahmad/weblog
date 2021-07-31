@@ -5,6 +5,13 @@ from extends.jtime import jalali_convertor
 
 
 # Create your models here.
+class ArticlesManager(models.Manager):
+    def published(self):
+        return self.filter(status="p")
+
+
+
+
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name="عنوان")
     parent = models.ForeignKey('self', on_delete=models.SET_NULL, related_name="children", verbose_name="زیردسته", null=True, blank=True)
@@ -50,6 +57,8 @@ class Articles(models.Model):
 
     def category_publish(self):
         return self.category.filter(status=True)
+
+    objects = ArticlesManager()
 
     def __str__(self):
         return self.title

@@ -22,3 +22,4 @@ this is a project for exercise Django framework
 - [x] Make category_loop.file file and include that in navbar_category.html file with loop
 - [x] Change fonts
 - [x] Change the template
+- [x] Make pagination and button for chanage the pages

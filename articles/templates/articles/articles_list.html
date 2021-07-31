@@ -1,0 +1,41 @@
+{% extends 'articles/base.html' %} {% load static %} {% block main %}
+{% for article in articles %}
+<section class="py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="col-md-6">
+        <img class="card-img-top mb-5 mb-md-0" src="{{ article.thumbnail.url }}" alt="..." />
+      </div>
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bolder"><a href="{% url 'articles:details' article.slug %}">{{ article.title }}</a></h1>
+        <div class="fs-5 mb-5">
+          <time>{{ article.jpublish }}</time>
+        </div>
+        <p class="lead">{{ article.description| truncatewords:10 }}</p>
+        <div class="d-flex"></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+<!-- <div class="container px-4 px-lg-5 my-5">
+  {% if articles.has_previous %}
+  <a class="btn btn-primary text-uppercase" href="{% url 'articles:home' articles.previous_page_number %}">پست های جدید
+    تر
+    &rarr;</a>
+  {% endif %}
+  {% if articles.has_next %}
+  <a class="btn btn-primary text-uppercase" href="{% url 'articles:home' articles.next_page_number %}">پست های قدیمی تر
+    &larr;</a>
+  {% endif %}
+</div> -->
+
+<div class="container px-4 px-lg-5 my-5">
+  {% if articles.has_previous %}
+  <a class="btn btn-outline-primary" href="{% url 'articles:home' articles.previous_page_number %}">جدیدتر</a>
+  {% endif %}
+  {% if articles.has_next %}
+  <a class="btn btn-outline-primary" href="{% url 'articles:home' articles.next_page_number %}">قدیمی تر</a>
+  {% endif %}
+</div>
+{% endblock %}
