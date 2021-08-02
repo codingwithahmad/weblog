@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Articles, Category
 from django.views.generic.list import ListView
 from django.core.paginator import Paginator
-
+from django.views.generic.detail import DetailView
 #Create your views here
 
 def home(request, page=1):
@@ -21,11 +21,21 @@ def home(request, page=1):
 #     queryset = Articles.objects.published()
 #     paginate_by = 2
 
-def details(request, slug):
-    content = {
-        "article": get_object_or_404(Articles, slug=slug)
-    }
-    return render(request, 'articles/single.html', content)
+# def details(request, slug):
+#     content = {
+#         "article": get_object_or_404(Articles, slug=slug)
+#     }
+#     return render(request, 'articles/single.html', content)
+
+class ArticleDetail(DetailView):
+
+    context_object_name = "article"
+
+    def get_object(self):
+        slug = self.kwargs.get("slug")
+        return get_object_or_404(Articles, slug=slug)
+
+
 
 def category_articles(request, slug):
     category = get_object_or_404(Category, slug=slug, status=True)
@@ -34,3 +44,4 @@ def category_articles(request, slug):
         "articles": articles
     }
     return render(request, 'articles/category.html', content)
+

@@ -1,37 +1,41 @@
 {% extends 'articles/base.html' %} {% load static %} {% block main %}
-<div class="item mb-5">
-  <div class="row g-3 g-xl-0">
-    {% for article in articles %}
-    <div class="col-2 col-xl-3">
-      <img
-        class="img-fluid post-thumb"
-        src="{{ article.thumbnail.url }}"
-        alt="image"
-      />
-    </div>
-    <div class="col">
-      <h3 class="title mb-1">
-        <a class="text-link" href="{% url 'articles:details' article.slug %}"
-          >{{ article.title }}</a
-        >
-      </h3>
-      <div class="meta mb-1">
-        <p class="date" style="text-align: rtl !important">
-          {{ article.jpublish }}
-        </p>
-        <span class="time">7 min read</span
-        ><span class="comment"
-          ><a class="text-link" href="#">8 comments</a></span
-        >
+{% for article in articles %}
+<section class="py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="col-md-6">
+        <img class="card-img-top mb-5 mb-md-0" src="{{ article.thumbnail.url }}" alt="..." />
       </div>
-      <div class="intro">{{ article.description| truncatewords:30 }}</div>
-      <a class="text-link" href="{% url 'articles:details' article.slug %}"
-        >Read more &rarr;</a
-      >
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bolder"><a href="{% url 'articles:details' article.slug %}">{{ article.title }}</a></h1>
+        <div class="fs-5 mb-5">
+          <time>{{ article.jpublish }}</time>
+        </div>
+        <p class="lead">{{ article.description| truncatewords:10 }}</p>
+        <div class="d-flex"></div>
+      </div>
     </div>
-    <!--//col-->
-    {% endfor %}
   </div>
-  <!--//row-->
+</section>
+{% endfor %}
+<!-- <div class="container px-4 px-lg-5 my-5">
+  {% if articles.has_previous %}
+  <a class="btn btn-primary text-uppercase" href="{% url 'articles:home' articles.previous_page_number %}">پست های جدید
+    تر
+    &rarr;</a>
+  {% endif %}
+  {% if articles.has_next %}
+  <a class="btn btn-primary text-uppercase" href="{% url 'articles:home' articles.next_page_number %}">پست های قدیمی تر
+    &larr;</a>
+  {% endif %}
+</div> -->
+
+<div class="container px-4 px-lg-5 my-5">
+  {% if articles.has_previous %}
+  <a class="btn btn-outline-primary" href="{% url 'articles:home' articles.previous_page_number %}">جدیدتر</a>
+  {% endif %}
+  {% if articles.has_next %}
+  <a class="btn btn-outline-primary" href="{% url 'articles:home' articles.next_page_number %}">قدیمی تر</a>
+  {% endif %}
 </div>
 {% endblock %}

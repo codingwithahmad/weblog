@@ -23,3 +23,4 @@ this is a project for exercise Django framework
 - [x] Change fonts
 - [x] Change the template
 - [x] Make pagination and button for chanage the pages
+- [x] Make a dropdown navigation bar for category with submenu
