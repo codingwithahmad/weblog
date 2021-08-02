@@ -12,7 +12,9 @@
           <time>{{ article.jpublish }}</time>
         </div>
         <p class="lead">{{ article.description| truncatewords:10 }}</p>
-        <div class="d-flex"></div>
+        {% for category in article.category.active %}
+        <div class="d-flex">#{{ category }}</div>
+        {% endfor %}
       </div>
     </div>
   </div>

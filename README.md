@@ -24,3 +24,4 @@ this is a project for exercise Django framework
 - [x] Change the template
 - [x] Make pagination and button for chanage the pages
 - [x] Make a dropdown navigation bar for category with submenu
+- [x] Add category hashtag for articles

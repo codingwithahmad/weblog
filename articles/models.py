@@ -8,6 +8,7 @@ from extends.jtime import jalali_convertor
 class ArticlesManager(models.Manager):
     def published(self):
         return self.filter(status="p")
+    
 
 class CategoryManager(models.Manager):
     def active(self):
