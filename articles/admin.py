@@ -4,7 +4,7 @@ from .models import Articles, Category
 
 @admin.register(Articles)
 class ArticlesAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'status', 'jpublish', 'category_to_str')
+    list_display = ('title', 'thumbnail_tag', 'author', 'status', 'jpublish', 'category_to_str')
     search_fields = ('title', 'author')
     list_filter = ('title', 'publish', 'author')
     actions = ["make_published", "make_draft"]

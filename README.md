@@ -26,3 +26,4 @@ this is a project for exercise Django framework
 - [x] Make a dropdown navigation bar for category with submenu
 - [x] Add category hashtag for articles
 - [x] Add action to Articles and Category modles
+- [x] Add thumbnail to admin panel for Articles model
