@@ -28,3 +28,5 @@ this is a project for exercise Django framework
 - [x] Add action to Articles and Category modles
 - [x] Add thumbnail to admin panel for Articles model
 - [x] Add api app and make serializer and a ListCreateAPIView
+- [x] Put all static files in project into a dir name static
+- [x] Change panel admin fonts to a farsi fonts like Sahel
