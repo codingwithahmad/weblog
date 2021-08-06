@@ -1,7 +1,12 @@
 from django.contrib import admin
 from .models import Articles, Category
-# Register your models here.
 
+# Admin panel template edit
+
+admin.site.site_header = "مدیریت وبلاگ"
+
+
+# Register your models here.
 @admin.register(Articles)
 class ArticlesAdmin(admin.ModelAdmin):
     list_display = ('title', 'thumbnail_tag', 'author', 'status', 'jpublish', 'category_to_str')

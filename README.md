@@ -29,6 +29,7 @@ this is a project for exercise Django framework
 - [x] Add thumbnail to admin panel for Articles model
 - [x] Put all static files in project into a dir name static
 - [x] Change panel admin fonts to a farsi fonts like Sahel
+- [x] Change Admin panel header from admin.py in articles app
 
 #TODO-API
 - [x] Add api app and make serializer and a ListCreateAPIView   
