@@ -30,6 +30,10 @@ this is a project for exercise Django framework
 - [x] Put all static files in project into a dir name static
 - [x] Change panel admin fonts to a farsi fonts like Sahel
 - [x] Change Admin panel header from admin.py in articles app
+- [x] Make list.html to handel all articles list how have a same structure
+- [ ] Make view for user articles
+- [ ] Change functional view to generic class
+
 
 #TODO-API
 - [x] Add api app and make serializer and a ListCreateAPIView   
