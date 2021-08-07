@@ -35,4 +35,4 @@ this is a project for exercise Django framework
 - [x] Add api app and make serializer and a ListCreateAPIView   
 - [x] Add view for single article in api app
 - [x] Add User model to api
-- [x] Add premissions for api/user/* views in views.py  
+- [x] Add permissions for api/user/* views in views.py  
