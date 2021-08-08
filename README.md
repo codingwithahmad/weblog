@@ -47,3 +47,5 @@ this is a project for exercise Django framework
 - [x] Set a route to account.urls in myweblog urls.py
 - [x] Set a route for /account/login in account urls.py
 - [x] Make registration folder and login.html in this folder for handel template of /account/login route
+- [x] Make home page for logged in users
+- [x] set LOGIN_REDIRECT_URL and LOGIN_URL in settings.py 
