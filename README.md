@@ -39,4 +39,11 @@ this is a project for exercise Django framework
 - [x] Add api app and make serializer and a ListCreateAPIView   
 - [x] Add view for single article in api app
 - [x] Add User model to api
-- [x] Add permissions for api/user/* views in views.py  
+- [x] Add permissions for api/user/* views in views.py
+
+#TODO-ACCOUNT
+- [x] Create Account app
+- [x] Create a urls.py file for account app
+- [x] Set a route to account.urls in myweblog urls.py
+- [x] Set a route for /account/login in account urls.py
+- [x] Make registration folder and login.html in this folder for handel template of /account/login route
