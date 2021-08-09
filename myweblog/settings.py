@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'extends',
     'api.apps.ApiConfig',
     'account.apps.AccountConfig',
+
+    'widget_tweaks',
+
     'rest_framework'
 ]
 
