@@ -60,7 +60,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-						{{ form.username|add_class:"input100"|remove_attr:"required" }}
+						{{ form.username|add_class:"input100" }}
 						{% if form.username.errors %}
 						<div class="errors">
 							{% for error in form.username.errors %}

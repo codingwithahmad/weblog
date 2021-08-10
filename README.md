@@ -48,4 +48,6 @@ this is a project for exercise Django framework
 - [x] Set a route for /account/login in account urls.py
 - [x] Make registration folder and login.html in this folder for handel template of /account/login route
 - [x] Make home page for logged in users
-- [x] set LOGIN_REDIRECT_URL and LOGIN_URL in settings.py 
+- [x] Set LOGIN_REDIRECT_URL and LOGIN_URL in settings.py 
+- [x] Make a template name base.html for /account page and sidebar.html is include that
+- [x] Edit template and fix sylesheet link
