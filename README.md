@@ -51,3 +51,11 @@ this is a project for exercise Django framework
 - [x] Set LOGIN_REDIRECT_URL and LOGIN_URL in settings.py 
 - [x] Make a template name base.html for /account page and sidebar.html is include that
 - [x] Edit template and fix sylesheet link
+- [x] Clean the adminlte template at /account and fix some url for tags
+C
+D
+C
+C
+- [x] Clean the adminlte template in /acc
+
+- [x] Clea
