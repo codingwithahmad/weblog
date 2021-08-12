@@ -14,9 +14,7 @@ class ArticlesAdmin(admin.ModelAdmin):
     list_filter = ('title', 'publish', 'author')
     actions = ["make_published", "make_draft"]
 
-    def category_to_str(self, obj):
-        return ", ".join([ category.title for category in obj.category_publish()])
-    category_to_str.short_description = "دسته یندی ها"
+    
 
     @admin.action(description="منتشر کردن مقالات انتخابی")
     def make_published(self, request, queryset):

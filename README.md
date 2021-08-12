@@ -52,4 +52,5 @@ this is a project for exercise Django framework
 - [x] Make a template name base.html for /account page and sidebar.html is include that
 - [x] Edit template and fix sylesheet link
 - [x] Clean the adminlte template at /account and fix some url for tags
-
+- [x] Add articles list with a tabel in /account
+- [x] Fix articles list table for showing our articles
