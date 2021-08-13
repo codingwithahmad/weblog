@@ -1,19 +1,25 @@
 from django.contrib import admin
 from .models import Articles, Category
+from django.contrib.auth.models import User
 
 # Admin panel template edit
 
 admin.site.site_header = "مدیریت وبلاگ"
 
 
-# Register your models here.
+# Register your models here.ر
 @admin.register(Articles)
 class ArticlesAdmin(admin.ModelAdmin):
-    list_display = ('title', 'thumbnail_tag', 'author', 'status', 'jpublish', 'category_to_str')
+    list_display = ('title', 'thumbnail_tag', 'author_full_name', 'status', 'jpublish', 'category_to_str')
     search_fields = ('title', 'author')
     list_filter = ('title', 'publish', 'author')
     actions = ["make_published", "make_draft"]
 
+
+    def author_full_name(self, obj):
+        return obj.author.get_full_name()
+
+    author_full_name.short_description = "نویسنده"
     
 
     @admin.action(description="منتشر کردن مقالات انتخابی")

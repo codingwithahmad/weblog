@@ -5,5 +5,10 @@ from django.views.generic.list import ListView
 
 # Create your views here.
 class ArticlesList(LoginRequiredMixin, ListView):
-    queryset = Articles.objects.all()
     template_name = "registration/home.html"
+
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Articles.objects.all()
+        else:
+            return Articles.objects.filter(author=self.request.user)
