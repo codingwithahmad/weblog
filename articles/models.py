@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 from extends.jtime import jalali_convertor
@@ -76,3 +77,6 @@ class Articles(models.Model):
     def category_to_str(self):
         return ", ".join([ category.title for category in self.category_publish()])
     category_to_str.short_description = "دسته یندی ها"
+
+    def get_absolute_url(self):
+        return reverse("account:home")
