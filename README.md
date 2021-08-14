@@ -56,3 +56,4 @@ this is a project for exercise Django framework
 - [x] Fix articles list table for showing our articles
 - [x] Change ArticlesList view in account app to showing all articles just for superusers
 - [x] Create ArticlesCreate view in account app and articles_create_update.html for its template
+- [x] Beautify ArticlesCreate view by install and use django-crispy-forms

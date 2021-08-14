@@ -1,10 +1,10 @@
 {% extends 'registration/base.html' %}
 
-{% block title %}
+{% block title %}{% block title-meta %}
 
 	لیست مقالات
 
-{% endblock %}
+{% endblock %}{% endblock %}
 
 
 {% block main %}
@@ -37,7 +37,7 @@
 							<td>{{ article.category_to_str }}</td>
 							<td><img src="{{ article.thumbnail.url }}" width="100px"></td>
 							<td>{{ article.author.get_full_name }}</td>
-							<td>{{ article.description| truncatewords:20 }}</td>
+							<td>{{ article.description|striptags|truncatewords:20 }}</td>
 							<td>{{ article.jpublish }}</td>
 							<td>
 								{% if article.status == "p" %}

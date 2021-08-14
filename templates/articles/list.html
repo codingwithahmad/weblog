@@ -12,7 +12,7 @@
                 <div class="fs-5 mb-5">
                     <time>{{ article.jpublish }}</time>
                 </div>
-                <p class="lead">{{ article.description| truncatewords:30 }}</p>
+                <p class="lead">{{ article.description|striptags|truncatewords:30 }}</p>
                 {% block category %}{% endblock %}
             </div>
         </div>

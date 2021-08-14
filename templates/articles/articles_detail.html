@@ -62,7 +62,7 @@
           <div class="fs-5 mb-5">
             <time>{{ article.jpublish }}</time>
           </div>
-          <p class="lead">{{ article.description| linebreaks }}</p>
+          <p class="lead">{{ article.description|safe|linebreaks }}</p>
           <div class="d-flex"></div>
         </div>
       </div>

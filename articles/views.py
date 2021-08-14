@@ -8,7 +8,7 @@ from django.views.generic.detail import DetailView
 
 def home(request, page=1):
     articles_list = Articles.objects.published()
-    paginator = Paginator(articles_list, 2)
+    paginator = Paginator(articles_list, 4)
     articles = paginator.get_page(page)
     content = {
         "articles": articles
