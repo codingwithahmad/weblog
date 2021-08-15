@@ -1,7 +1,7 @@
 #from django.shortcuts import render
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from articles.models import Articles
-from django.contrib.auth.models import User
+from account.models import User
 from .serializer import ArticleSerializer, UserSerializer
 from rest_framework.permissions import IsAdminUser
 # Create your views here.

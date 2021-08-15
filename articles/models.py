@@ -1,9 +1,11 @@
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
-from django.contrib.auth.models import User
+from myweblog import settings
 from extends.jtime import jalali_convertor
 from django.utils.html import format_html
+from account.models import User
+
 
 # Create your models here.
 class ArticlesManager(models.Manager):

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from articles.models import Articles
-from django.contrib.auth.models import User
+from account.models import User
 
 class ArticleSerializer(serializers.ModelSerializer):
     
