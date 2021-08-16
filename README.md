@@ -59,3 +59,4 @@ this is a project for exercise Django framework
 - [x] Beautify ArticlesCreate view by install and use django-crispy-forms
 - [x] Add User model at account/models and customiz that for useing User model in project
 - [x] Delete database and migrate again for useing custom User model
+- [x] Add custom User model fields how placed in account app models to admin panel for update and create user
