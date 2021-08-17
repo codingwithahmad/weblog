@@ -39,7 +39,7 @@ class ArticleDetail(DetailView):
 
 def category_articles(request, slug):
     category = get_object_or_404(Category, slug=slug, status=True)
-    articles = category.articles.all()
+    articles = category.articles.published()
     content = {
         "articles": articles
     }

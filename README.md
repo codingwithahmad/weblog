@@ -1,3 +1,4 @@
+
 # Weblog
 
 this is a project for exercise Django framework
@@ -60,3 +61,4 @@ this is a project for exercise Django framework
 - [x] Add User model at account/models and customiz that for useing User model in project
 - [x] Delete database and migrate again for useing custom User model
 - [x] Add custom User model fields how placed in account app models to admin panel for update and create user
+- [x] Add mixins.py file in account app and write two mixin for fields how user access them and an if condition in article_create_update.html for not showing that fields
