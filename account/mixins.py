@@ -1,4 +1,6 @@
 from django.http import Http404
+from django.shortcuts import get_object_or_404
+from articles.models import Articles
 
 class FieldsMixin():
 	def dispatch(self, request, *args, **kwargs):
@@ -27,3 +29,10 @@ class FormValid():
 			self.obj.status = "d"
 
 		return super().form_valid(form)
+class AuthorAccessMixin():
+	def dispatch(self, request, pk, *args, **kwargs):
+		articles = get_object_or_404(Articles, pk=pk)
+		if articles.author == request.user and articles.status == 'd' or request.user.is_superuser:
+			return super().dispatch(request, *args, **kwargs)
+		else:
+			raise Http404("شما دسترسی به این بخش را ندارید")

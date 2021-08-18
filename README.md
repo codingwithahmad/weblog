@@ -62,3 +62,4 @@ this is a project for exercise Django framework
 - [x] Delete database and migrate again for useing custom User model
 - [x] Add custom User model fields how placed in account app models to admin panel for update and create user
 - [x] Add mixins.py file in account app and write two mixin for fields how user access them and an if condition in article_create_update.html for not showing that fields
+- [x] Add ArticlesUpdate view and AuthorAccessMixin in account app and change home.html title for just showing draft articles link for author user
