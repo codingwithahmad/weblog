@@ -36,3 +36,11 @@ class AuthorAccessMixin():
 			return super().dispatch(request, *args, **kwargs)
 		else:
 			raise Http404("شما دسترسی به این بخش را ندارید")
+
+class SuperUserMixin():
+	def dispatch(self, request, pk, *args, **kwargs):
+		articles = get_object_or_404(Articles, pk=pk)
+		if request.user.is_superuser:
+			return super().dispatch(request, *args, **kwargs)
+		else:
+			raise Http404("شما دسترسی به این بخش را ندارید")
