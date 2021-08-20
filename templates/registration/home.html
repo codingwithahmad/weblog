@@ -12,58 +12,62 @@
 
 	<div class="row">
           <div class="col-12">
-            <div class="card">
-              
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>عنوان</th>
-                      <th>آدرس مقاله</th>
-                      <th>دستع بندی</th>
-                      <th>تصویر</th>
-                      <th>نویسنده</th>
-                      <th>متن</th>
-                      <th>زمان انتشار</th>
-                      <th>وضعیت</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {% for article in object_list %}
-                    <tr>
-        							<td>
-                        {% if article.status == 'd' or user.is_superuser %}
-                          <a href="{% url 'account:article-update' article.pk %}">{{ article.title }}</a>
-                        {% else %}
-                          {{ article.title }}
-                        {% endif %}
-                      </td>
-        							<td>{{ article.slug }}</td>
-        							<td>{{ article.category_to_str }}</td>
-        							<td><img src="{{ article.thumbnail.url }}" width="100px"></td>
-        							<td>{{ article.author.get_full_name }}</td>
-        							<td>{{ article.description|striptags|truncatewords:20 }}</td>
-        							<td>{{ article.jpublish }}</td>
-        							<td>
-        								{% if article.status == "p" %}
-        									<span class="badge bg-success">منتشر شده</span>
-        									<a target="_blank" href="{% url 'articles:details' article.slug %}" class="badge bg-primary">نمایش مقاله در سایت</a>	
-        								{% else %}
-        									<span class="badge bg-danger">پیش نویس</span>
-        								{% endif %}
-                        {% if user.is_superuser %}
-                          <a href="{% url 'account:article-delete' article.pk %}" class="badge text-danger">حذف</a>
-                        {% endif %}
-        							</td>
-                    </tr>
-                    {% endfor %}
-                  </tbody>
-                </table>
+            {% if object_list %}
+                <div class="card">
+                
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th>عنوان</th>
+                        <th>آدرس مقاله</th>
+                        <th>دستع بندی</th>
+                        <th>تصویر</th>
+                        <th>نویسنده</th>
+                        <th>متن</th>
+                        <th>زمان انتشار</th>
+                        <th>وضعیت</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for article in object_list %}
+                      <tr>
+                        <td>
+                          {% if article.status == 'd' or user.is_superuser %}
+                            <a href="{% url 'account:article-update' article.pk %}">{{ article.title }}</a>
+                          {% else %}
+                            {{ article.title }}
+                          {% endif %}
+                        </td>
+                        <td>{{ article.slug }}</td>
+                        <td>{{ article.category_to_str }}</td>
+                        <td><img src="{{ article.thumbnail.url }}" width="100px"></td>
+                        <td>{{ article.author.get_full_name }}</td>
+                        <td>{{ article.description|striptags|truncatewords:20 }}</td>
+                        <td>{{ article.jpublish }}</td>
+                        <td>
+                          {% if article.status == "p" %}
+                            <span class="badge bg-success">منتشر شده</span>
+                            <a target="_blank" href="{% url 'articles:details' article.slug %}" class="badge bg-primary">نمایش مقاله در سایت</a>  
+                          {% else %}
+                            <span class="badge bg-danger">پیش نویس</span>
+                          {% endif %}
+                          {% if user.is_superuser %}
+                            <a href="{% url 'account:article-delete' article.pk %}" class="badge text-danger">حذف</a>
+                          {% endif %}
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
               </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+              <!-- /.card -->
+            {% else %}
+              <h3>محتوایی برای نمایش وجود ندارد</h3>
+            {% endif %}
           </div>
         </div>
 
