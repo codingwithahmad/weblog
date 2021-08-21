@@ -65,3 +65,8 @@ this is a project for exercise Django framework
 - [x] Add ArticlesUpdate view and AuthorAccessMixin in account app and change home.html title for just showing draft articles link for author user
 - [x] Added a ArticlesDelete view in account app and a mixin name SuperUserMixin and create articles_confirm_delete.html template for ArticlesDelete view 
 - [x] Added LOGOUT_REDIRECT_URL to settings.py and a ul for showing logout icon than add a condition for just showing a message when the table is empty
+# section 55
+- [x] Add a templatetags of type inclusion in base_tags.py at articles app
+- [x] Add a link.html file in registration/partials
+- [x] Add a sample a link from sidebar to link.html and fix that with link inclusion template tag how add in base_tag.py
+- [x] Add an if condition for showing a delete button when user is a superuser at the update article page
