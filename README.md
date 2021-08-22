@@ -70,3 +70,7 @@ this is a project for exercise Django framework
 - [x] Add a link.html file in registration/partials
 - [x] Add a sample a link from sidebar to link.html and fix that with link inclusion template tag how add in base_tag.py
 - [x] Add an if condition for showing a delete button when user is a superuser at the update article page
+# section 56 
+- [x] Add a ArticlePreview in views.py at articles app
+- [x] Add AuthorAccessMixin in ArticlePreview
+- [x] Add an a tag in if condition at home.html for showing preview

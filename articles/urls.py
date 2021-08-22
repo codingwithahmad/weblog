@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('page/<int:page>', views.home, name="home"),
     path('details/<slug:slug>', views.ArticleDetail.as_view(), name="details"),
+    path('preview/<int:pk>', views.ArticlePreview.as_view(), name="preview"),
     path('category/<slug:slug>', views.category_articles, name="category")
 ]

@@ -4,6 +4,8 @@ from .models import Articles, Category
 from django.views.generic.list import ListView
 from django.core.paginator import Paginator
 from django.views.generic.detail import DetailView
+from account.mixins import AuthorAccessMixin
+
 #Create your views here
 
 def home(request, page=1):
@@ -33,8 +35,16 @@ class ArticleDetail(DetailView):
 
     def get_object(self):
         slug = self.kwargs.get("slug")
-        return get_object_or_404(Articles, slug=slug)
+        return get_object_or_404(Articles.objects.published(), slug=slug)
 
+
+class ArticlePreview(AuthorAccessMixin, DetailView):
+
+    context_object_name = "article"
+
+    def get_object(self):
+        pk = self.kwargs.get("pk")
+        return get_object_or_404(Articles, pk=pk)
 
 
 def category_articles(request, slug):

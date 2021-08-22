@@ -49,9 +49,10 @@
                         <td>
                           {% if article.status == "p" %}
                             <span class="badge bg-success">منتشر شده</span>
-                            <a target="_blank" href="{% url 'articles:details' article.slug %}" class="badge bg-primary">نمایش مقاله در سایت</a>  
+                            <a target="_blank" href="{% url 'articles:details' article.slug %}" class="badge bg-primary">نمایش مقاله</a>  
                           {% else %}
                             <span class="badge bg-danger">پیش نویس</span>
+                            <a target="_blank" href="{% url 'articles:preview' article.pk %}" class="badge bg-secondary">پیش نمایش</a>
                           {% endif %}
                           {% if user.is_superuser %}
                             <a href="{% url 'account:article-delete' article.pk %}" class="badge text-danger">حذف</a>
