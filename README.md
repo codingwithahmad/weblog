@@ -74,3 +74,7 @@ this is a project for exercise Django framework
 - [x] Add a ArticlePreview in views.py at articles app
 - [x] Add AuthorAccessMixin in ArticlePreview
 - [x] Add an a tag in if condition at home.html for showing preview
+# section 57
+- [x] Add two more status in Article model 
+- [x] Change AuthorAccessMixin and replace " == 'd' " with "in ['b', 'd']"
+- [x] Change conditions in home.html 

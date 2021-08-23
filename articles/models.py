@@ -41,7 +41,9 @@ class Category(models.Model):
 class Articles(models.Model):
     STATUS_CHOICES = [
         ('p', 'منتشرشده'),
-        ('d', 'پیش نویس')
+        ('d', 'پیش نویس'),
+        ('i', 'در حال بررسی'),
+        ('b', 'برگشت داده شده'),
     ]
 
     title = models.CharField(max_length=200, verbose_name="عنوان")
