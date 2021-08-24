@@ -78,3 +78,8 @@ this is a project for exercise Django framework
 - [x] Add two more status in Article model 
 - [x] Change AuthorAccessMixin and replace " == 'd' " with "in ['b', 'd']"
 - [x] Change conditions in home.html 
+# section 58 
+- [x] Add is_special field to Article model
+- [x] Add is_special field to admin.py list_display in articles app and FieldMixin for author and superuser
+- [x] Add some condition in articles_detail.html for showing description
+- [x] Add a new column for is_special in home.html table

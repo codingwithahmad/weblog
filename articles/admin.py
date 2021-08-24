@@ -10,7 +10,7 @@ admin.site.site_header = "مدیریت وبلاگ"
 # Register your models here.ر
 @admin.register(Articles)
 class ArticlesAdmin(admin.ModelAdmin):
-    list_display = ('title', 'thumbnail_tag', 'author_full_name', 'status', 'jpublish', 'category_to_str')
+    list_display = ('title', 'thumbnail_tag', 'author_full_name', 'status', 'is_special', 'jpublish', 'category_to_str')
     search_fields = ('title', 'author')
     list_filter = ('title', 'publish', 'author')
     actions = ["make_published", "make_draft"]

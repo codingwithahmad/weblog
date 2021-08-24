@@ -62,7 +62,17 @@
           <div class="fs-5 mb-5">
             <time>{{ article.jpublish }}</time>
           </div>
-          <p class="lead">{{ article.description|safe|linebreaks }}</p>
+          <p class="lead">
+            {% if article.is_special %}
+              {% if user.authenticated and user.is_special_user or user == article.author or user.is_superuser %}
+                {{ article.description|safe|linebreaks }}
+              {% else %}
+                <p>این مقاله ویژه است و برای مشاهد آن باید <a href="#">اشتراک ویژه</a> خریداری کنید</p>
+              {% endif %}
+            {% else %}
+              {{ article.description|safe|linebreaks }}
+            {% endif %}
+          </p>
           <div class="d-flex"></div>
         </div>
       </div>

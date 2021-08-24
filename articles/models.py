@@ -55,6 +55,7 @@ class Articles(models.Model):
     create = models.DateTimeField(auto_now_add=True, verbose_name="زمان نوشتار")
     update = models.DateTimeField(auto_now=True, verbose_name="زمان بروزرسانی")
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, verbose_name="وضعیت")
+    is_special = models.BooleanField(default=False, verbose_name="مقاله ویژه")
     category = models.ManyToManyField(Category, verbose_name="دسته یندی", related_name="articles")
 
     class Meta:
