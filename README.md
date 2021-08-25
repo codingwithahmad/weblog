@@ -83,3 +83,7 @@ this is a project for exercise Django framework
 - [x] Add is_special field to admin.py list_display in articles app and FieldMixin for author and superuser
 - [x] Add some condition in articles_detail.html for showing description
 - [x] Add a new column for is_special in home.html table
+# section 59
+- [x] Add Profile view in views.py at account app
+- [x] Add new url for Profile view in urls.py at account app
+- [x] Add profile.html template for Profile view 

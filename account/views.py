@@ -8,6 +8,7 @@ from .mixins import (
     AuthorAccessMixin,
     SuperUserMixin,
 )
+from .models import User
 from django.views.generic import (
     ListView,
     CreateView,
@@ -42,3 +43,12 @@ class ArticlesDelete(SuperUserMixin, DeleteView):
     model = Articles
     success_url = reverse_lazy('account:home')
     template_name = "registration/articles_confirm_delete.html"
+
+
+class Profile(UpdateView):
+    model = User
+    fields = ["username", "email", "first_name", "last_name", "special_user", "is_author"]
+    template_name = "registration/profile.html"
+
+    def get_object(self):
+        return User.objects.get(pk= self.request.user.pk)
