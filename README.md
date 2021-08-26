@@ -91,3 +91,6 @@ this is a project for exercise Django framework
 - [x] Add forms.py at account app
 - [x] Create new form in the nam of ProfileForm in forms.py
 - [x] Set ProfileForms for form_class attr in Profile view in views.py
+# section 61
+- [x] Add get_form_kwargs def to Profile view for send user to ProfileForm
+- [x] Add an if not user.is_superuesr to ProfileForm init 
