@@ -87,3 +87,7 @@ this is a project for exercise Django framework
 - [x] Add Profile view in views.py at account app
 - [x] Add new url for Profile view in urls.py at account app
 - [x] Add profile.html template for Profile view 
+# section 60
+- [x] Add forms.py at account app
+- [x] Create new form in the nam of ProfileForm in forms.py
+- [x] Set ProfileForms for form_class attr in Profile view in views.py

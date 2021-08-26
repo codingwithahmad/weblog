@@ -15,6 +15,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from .forms import ProfileForm
 
 # Create your views here.
 class ArticlesList(LoginRequiredMixin, ListView):
@@ -47,8 +48,7 @@ class ArticlesDelete(SuperUserMixin, DeleteView):
 
 class Profile(UpdateView):
     model = User
-    fields = ["username", "email", "first_name", "last_name", "special_user", "is_author"]
     template_name = "registration/profile.html"
-
+    form_class = ProfileForm
     def get_object(self):
         return User.objects.get(pk= self.request.user.pk)
