@@ -94,3 +94,8 @@ this is a project for exercise Django framework
 # section 61
 - [x] Add get_form_kwargs def to Profile view for send user to ProfileForm
 - [x] Add an if not user.is_superuesr to ProfileForm init 
+# section 62
+- [x] Add Login view who inherit from LoginView in account app
+- [x] Add an if condition for redirect normal user to profile after login
+- [x] Add an if condition at sidebar.html for showing articles section just for author and superusers
+ 

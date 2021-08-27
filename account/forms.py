@@ -3,9 +3,12 @@ from .models import User
 
 class ProfileForm(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
+		print(kwargs)
 
 		user = kwargs.pop('user')
 
+		print(kwargs)
+		print(args)
 		super(ProfileForm, self).__init__(*args, **kwargs)
 
 		if not user.is_superuser:
