@@ -7,6 +7,7 @@ from .mixins import (
     FormValid,
     AuthorAccessMixin,
     SuperUserMixin,
+    AuthorsAccessMixin,
 )
 from .models import User
 from django.views.generic import (
@@ -19,7 +20,7 @@ from django.contrib.auth.views import LoginView
 from .forms import ProfileForm
 
 # Create your views here.
-class ArticlesList(LoginRequiredMixin, ListView):
+class ArticlesList(AuthorsAccessMixin, ListView):
     template_name = "registration/home.html"
 
     def get_queryset(self):
@@ -29,7 +30,7 @@ class ArticlesList(LoginRequiredMixin, ListView):
             return Articles.objects.filter(author=self.request.user)
 
 
-class ArticlesCreate(LoginRequiredMixin, FieldsMixin, FormValid, CreateView):
+class ArticlesCreate(AuthorsAccessMixin, FieldsMixin, FormValid, CreateView):
     model = Articles
     fields = ["title", "slug", "author", "description", "thumbnail", "publish", "status", "category",]
     template_name = "registration/articles_create_update.html"

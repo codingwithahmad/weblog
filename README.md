@@ -98,4 +98,6 @@ this is a project for exercise Django framework
 - [x] Add Login view who inherit from LoginView in account app
 - [x] Add an if condition for redirect normal user to profile after login
 - [x] Add an if condition at sidebar.html for showing articles section just for author and superusers
- 
+# section 63
+- [x] Add AuthorsAccessMixin in Mixins.py
+- [x] Replace LoginRequireMixin with AuthorsAccessMixin
