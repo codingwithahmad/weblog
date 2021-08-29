@@ -101,3 +101,8 @@ this is a project for exercise Django framework
 # section 63
 - [x] Add AuthorsAccessMixin in Mixins.py
 - [x] Replace LoginRequireMixin with AuthorsAccessMixin
+# section 64
+- [x] Add an if condition next to title at list.html and article_create.html for showing special badge for is_special articles
+- [x] Add 2 line of article.description over the p tag for normal user in article_detail.html 
+- [x] add alert and alert-warning classes for p tag and alert-link class for a tag in it
+ 

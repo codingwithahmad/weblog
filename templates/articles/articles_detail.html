@@ -59,6 +59,9 @@
         </div>
         <div class="col-md-6">
           <h1 class="display-5 fw-bolder">{{ article.title }}</h1>
+          {% if article.is_special %}
+                    <span class="badge bg-danger" style="font-size: 15px;">ویژه</span>
+          {% endif %}
           <div class="fs-5 mb-5">
             <time>{{ article.jpublish }}</time>
           </div>
@@ -67,7 +70,8 @@
               {% if user.authenticated and user.is_special_user or user == article.author or user.is_superuser %}
                 {{ article.description|safe|linebreaks }}
               {% else %}
-                <p>این مقاله ویژه است و برای مشاهد آن باید <a href="#">اشتراک ویژه</a> خریداری کنید</p>
+                {{ article.description|striptags|truncatewords:30 }}
+                <p class="alert alert-warning">این مقاله ویژه است و برای مشاهد آن باید <a class="alert-link" href="#">اشتراک ویژه</a> خریداری کنید</p>
               {% endif %}
             {% else %}
               {{ article.description|safe|linebreaks }}
