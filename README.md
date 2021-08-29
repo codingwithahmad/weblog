@@ -3,7 +3,7 @@
 
 this is a project for exercise Django framework
 
-#TODO
+# TODO
 
 - [x] Make article model
 - [x] Fix url patterns for artcles app
@@ -36,13 +36,13 @@ this is a project for exercise Django framework
 - [ ] Change functional view to generic class
 
 
-#TODO-API
+# TODO-API
 - [x] Add api app and make serializer and a ListCreateAPIView   
 - [x] Add view for single article in api app
 - [x] Add User model to api
 - [x] Add permissions for api/user/* views in views.py
 
-#TODO-ACCOUNT
+# TODO-ACCOUNT
 - [x] Create Account app
 - [x] Create a urls.py file for account app
 - [x] Set a route to account.urls in myweblog urls.py
@@ -105,4 +105,7 @@ this is a project for exercise Django framework
 - [x] Add an if condition next to title at list.html and article_create.html for showing special badge for is_special articles
 - [x] Add 2 line of article.description over the p tag for normal user in article_detail.html 
 - [x] add alert and alert-warning classes for p tag and alert-link class for a tag in it
- 
+# section 65
+- [x] Add an if condtion in AuthorsAceessMixin for anonymous user bug
+- [x] Add an else section for if condition refer to the superuser for status and author section and add a html part to author user can select between draft and send to admin for publish
+- [x] Chanage FieldMixin and FieldValid mixin 

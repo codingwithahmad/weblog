@@ -4,18 +4,13 @@ from articles.models import Articles
 
 class FieldsMixin():
 	def dispatch(self, request, *args, **kwargs):
+		self.fields = [
+		"title", "slug", 
+		"description", "thumbnail", 'is_special', 
+		"publish", "status", "category",
+		]
 		if request.user.is_superuser:
-			    self.fields = ["title", "slug", "author", 
-				    "description", "thumbnail", 'is_special', 
-				    "publish", "status", "category",
-			    ]
-		elif request.user.is_author:
-				self.fields = ["title", "slug", 
-				    "description", "thumbnail", 'is_special',
-				    "publish", "category",
-			    ]
-		else:
-			raise Http404("وضعیت نویسندگی شما فعال نیست")
+			self.fields.append("author")
 
 		return super().dispatch(request, *args, **kwargs)
 
@@ -26,7 +21,8 @@ class FormValid():
 		else:
 			self.obj = form.save(commit=False)
 			self.obj.author = self.request.user
-			self.obj.status = "d"
+			if not self.obj.status == "i":
+				self.obj.status = "d"
 
 		return super().form_valid(form)
 class AuthorAccessMixin():
@@ -47,7 +43,10 @@ class SuperUserMixin():
 
 class AuthorsAccessMixin():
 	def dispatch(self, request, *args, **kwargs):
-		if request.user.is_superuser or request.user.is_author:
-			return super().dispatch(request, *args, **kwargs)
+		if request.user.is_authenticated:
+			if request.user.is_superuser or request.user.is_author:
+				return super().dispatch(request, *args, **kwargs)
+			else:
+				return redirect("account:profile")
 		else:
-			return redirect("account:profile")
+			return redirect("account:login")				
