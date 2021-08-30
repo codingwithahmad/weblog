@@ -109,3 +109,8 @@ this is a project for exercise Django framework
 - [x] Add an if condtion in AuthorsAceessMixin for anonymous user bug
 - [x] Add an else section for if condition refer to the superuser for status and author section and add a html part to author user can select between draft and send to admin for publish
 - [x] Chanage FieldMixin and FieldValid mixin 
+# section 66
+- [x] Add two new url for password_chanage and password_chanage_done
+- [x] Add PasswordChanage view who inherit of django.contrib.auth.views.PasswordChangeView and than change success_url
+- [x] Add two html template for password_chanage and password_change_done
+- [x] Add and div with col-12 class for change_password link in profile.html
