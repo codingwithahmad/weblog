@@ -114,3 +114,15 @@ this is a project for exercise Django framework
 - [x] Add PasswordChanage view who inherit of django.contrib.auth.views.PasswordChangeView and than change success_url
 - [x] Add two html template for password_chanage and password_change_done
 - [x] Add and div with col-12 class for change_password link in profile.html
+# section 67
+- [x] copy login url in urls.py at account app
+- [x] delete all urlpatterns who from auth app in django 
+- [x] import Login view form account.views to urls.py at myweblog app
+- [x] delete PasswordChange view from account.views
+- [x] Change 'account:login' in settengs.py to 'login' for LOGOUT_REDIRECT_URL and LOGOUT_URL
+- [X] Change all url to password_chanage or login or other authenticatian link who have account: and delete account reference
+- [x] Add EMAIL_BACKEND in settings.py
+- [x] Add an a tag with link to 'password_reset' at profile.html 
+- [x] Add an email field to User model in accoun.models this need to add a unique=True for email in 0001_initial.py in migrations dir at account app and then makemigrations and migrate
+- [x] Chanage template for chanage password operation and add password_reset.html, password_reset_done.html, password_reset_confirm.html and password_reset_complete.html
+- [x] in password rest confirm add an if condition for validlink 

@@ -70,8 +70,7 @@ class Login(LoginView):
         if user.is_superuser or user.is_author:
             return reverse_lazy("account:home")
         else:
-            return reverse_lazy("account:profile")
+            return reverse_lazy("profile")
 
-class PasswordChange(PasswordChangeView):
-    success_url = reverse_lazy("account:password_change_done")
+
     
