@@ -126,3 +126,8 @@ this is a project for exercise Django framework
 - [x] Add an email field to User model in accoun.models this need to add a unique=True for email in 0001_initial.py in migrations dir at account app and then makemigrations and migrate
 - [x] Chanage template for chanage password operation and add password_reset.html, password_reset_done.html, password_reset_confirm.html and password_reset_complete.html
 - [x] in password rest confirm add an if condition for validlink 
+# section 68
+- [x] Install python-decouple library
+- [x] Add .env file and write email security information
+- [x] from decouple import config and config all security information need in settings.py
+- [x] fix some issue from account url in Profiel view and AuthorsAccessMixin

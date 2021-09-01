@@ -2,3 +2,4 @@ venv/
 myweblog/config.py
 db.sqlite3
 /static/registration/adminlte/plugins/
+.env

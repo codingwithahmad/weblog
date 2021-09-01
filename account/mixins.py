@@ -47,6 +47,6 @@ class AuthorsAccessMixin():
 			if request.user.is_superuser or request.user.is_author:
 				return super().dispatch(request, *args, **kwargs)
 			else:
-				return redirect("account:profile")
+				return redirect("profile")
 		else:
-			return redirect("account:login")				
+			return redirect("login")				

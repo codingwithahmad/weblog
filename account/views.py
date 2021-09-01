@@ -53,6 +53,7 @@ class Profile(LoginRequiredMixin, UpdateView):
     model = User
     template_name = "registration/profile.html"
     form_class = ProfileForm
+    success_url = reverse_lazy('account:profile')
     def get_object(self):
         return User.objects.get(pk= self.request.user.pk)
 
@@ -63,6 +64,7 @@ class Profile(LoginRequiredMixin, UpdateView):
         })
         return kwargs
 
+
 class Login(LoginView):
     def get_success_url(self):
         user = self.request.user
@@ -70,7 +72,7 @@ class Login(LoginView):
         if user.is_superuser or user.is_author:
             return reverse_lazy("account:home")
         else:
-            return reverse_lazy("profile")
+            return reverse_lazy("account:profile")
 
 
     
