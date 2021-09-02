@@ -131,3 +131,14 @@ this is a project for exercise Django framework
 - [x] Add .env file and write email security information
 - [x] from decouple import config and config all security information need in settings.py
 - [x] fix some issue from account url in Profiel view and AuthorsAccessMixin
+# section 69
+- [x] Make tokens.py - account app
+- [x] TokenGenerator in tokens.py - account app
+- [x] SignupForm in forms.py - account app 
+- [x] Register view in views.py - account app 
+- [x] Create account_active.html for sending email 
+- [x] activate view in views.py - account app
+- [x] set url for /activate/<uidb64>/<token> in myweblog/urls.py
+- [x] set url for /register in myweblog/urls.py
+- [x] Create create_account.html 
+- [x] Add signup link to login view
