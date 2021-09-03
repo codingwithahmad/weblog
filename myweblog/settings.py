@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'extends',
     'api.apps.ApiConfig',
     'account.apps.AccountConfig',
+    'django_gravatar',
 
     'widget_tweaks',
 

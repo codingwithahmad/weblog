@@ -142,3 +142,7 @@ this is a project for exercise Django framework
 - [x] set url for /register in myweblog/urls.py
 - [x] Create create_account.html 
 - [x] Add signup link to login view
+# section 70 
+- [x] Install package django-gravatar2
+- [x] Add 'django_gravatar' to Installed_app in settings.py
+- [x] Load gravatar in sidebar.html and {% gravatar_url user.email 150 %} in src of profile photo
