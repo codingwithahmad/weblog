@@ -1,4 +1,5 @@
 {% load static %}
+{% load comment_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,6 +77,8 @@
             {% else %}
               {{ article.description|safe|linebreaks }}
             {% endif %}
+            {% render_comments article request %}
+            {% include_bootstrap %}
           </p>
           <div class="d-flex"></div>
         </div>

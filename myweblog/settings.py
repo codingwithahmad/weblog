@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django_gravatar',
 
     'widget_tweaks',
+    'comment',
 
     'rest_framework',
 

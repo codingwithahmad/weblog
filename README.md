@@ -146,3 +146,10 @@ this is a project for exercise Django framework
 - [x] Install package django-gravatar2
 - [x] Add 'django_gravatar' to Installed_app in settings.py
 - [x] Load gravatar in sidebar.html and {% gravatar_url user.email 150 %} in src of profile photo
+# section 71
+- [x] Install django-comments-dab 
+- [x] Add "comment" to Installed_app
+- [x] Add "/comment" url to urls in myweblog
+- [x] import GenericRelation and Comment in models.py - articels app
+- [x] Add comments field to Article app
+- [x] Add {% load comment_tags %}, {% render_comments article request %} and {% include_bootstarp %} to articles_detail.html

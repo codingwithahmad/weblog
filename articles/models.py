@@ -5,7 +5,8 @@ from myweblog import settings
 from extends.jtime import jalali_convertor
 from django.utils.html import format_html
 from account.models import User
-
+from django.contrib.contenttypes.fields import GenericRelation
+from comment.models import Comment
 
 # Create your models here.
 class ArticlesManager(models.Manager):
@@ -57,6 +58,7 @@ class Articles(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, verbose_name="وضعیت")
     is_special = models.BooleanField(default=False, verbose_name="مقاله ویژه")
     category = models.ManyToManyField(Category, verbose_name="دسته یندی", related_name="articles")
+    comments = GenericRelation(Comment)
 
     class Meta:
         verbose_name="مقاله"

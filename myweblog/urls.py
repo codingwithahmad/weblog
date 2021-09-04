@@ -27,7 +27,8 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include('api.urls')),
-    path('account/', include('account.urls'))
+    path('account/', include('account.urls')),
+    path('comment/', include('comment.urls')),
 ]
 
 from django.conf import settings
