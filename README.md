@@ -153,3 +153,7 @@ this is a project for exercise Django framework
 - [x] import GenericRelation and Comment in models.py - articels app
 - [x] Add comments field to Article app
 - [x] Add {% load comment_tags %}, {% render_comments article request %} and {% include_bootstarp %} to articles_detail.html
+# section 72
+- [x] copy comments app from venv/lib/python/site-packages/ in my django-review3/myweblog
+- [x] uninstll django-comments-dab by pip
+- [x] edit templates/comment/comments html file for make custom comment section
