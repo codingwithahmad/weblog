@@ -157,3 +157,5 @@ this is a project for exercise Django framework
 - [x] copy comments app from venv/lib/python/site-packages/ in my django-review3/myweblog
 - [x] uninstll django-comments-dab by pip
 - [x] edit templates/comment/comments html file for make custom comment section
+# section 73
+- [x] Start sending email for people who send comment to articles in comment/views/comments.py/ CreateComment class and form valid def

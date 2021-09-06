@@ -10,6 +10,9 @@ from comment.mixins import CanCreateMixin, CanEditMixin, CanDeleteMixin
 from comment.responses import UTF8JsonResponse
 from comment.messages import EmailError
 from comment.views import CommentCreateMixin, BaseCommentView
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage
+from django.urls import  reverse
 
 
 class CreateComment(CanCreateMixin, CommentCreateMixin):
@@ -42,6 +45,48 @@ class CreateComment(CanCreateMixin, CommentCreateMixin):
         )
         self.comment = self.perform_create(temp_comment, self.request)
         self.data = render_to_string(self.get_template_names(), self.get_context_data(), request=self.request)
+        
+        article = self.comment.content_object
+        current_site = get_current_site(self.request)
+
+
+        # sending email for comment cratetors
+        author_email = article.author.email
+        user_email = self.comment.user.email
+        if author_email == user_email:
+            author_email = False
+            user_email = False
+        parent_email = False
+
+        if self.comment.parent:
+            parent_email = self.comment.parent.user.email
+            if parent_email in [author_email, user_email]:
+                parent_email = False
+
+        if author_email:
+            email = EmailMessage(
+                "دیدگاه جدید",
+                "دیدگاه جدیدی برای مقاله «{}» که شما نویسنده آن هستید ارسال شده است:\n {}{}".format(article, current_site, reverse('articles:details',kwargs={'slug':article.slug })),
+                to=[author_email]
+            )
+            email.send()
+
+        if user_email:
+            email = EmailMessage(
+                "دیدگاه دریافت شد",
+                "دیدگاه شما دریافت شد و به زودی به آن پاسخ می دهیم",
+                to=[user_email]
+            )
+
+
+        if parent_email:
+            email = EmailMessage(
+                "پاسخ به دیدگاه شما",
+                "پاسخی به دیدگاه شما در مقاله «{}» داده شدیه، باری مشاهده آن روی لینک زیر کلیک کنید:\n {}{}".format(article, current_site, reverse('articles:details',kwargs={'slug':article.slug })),
+                to=[parent_email]
+            )
+            email.send()
+
         return UTF8JsonResponse(self.json())
 
     def form_invalid(self, form):
