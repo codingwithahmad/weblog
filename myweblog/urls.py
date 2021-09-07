@@ -23,6 +23,7 @@ urlpatterns = [
     path('login/', Login.as_view(), name='login'),
     path('register/', Register.as_view(), name='register'),
     path('activate/<uidb64>/<token>/', activate, name='activate'),    
+    path(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
     path('', include('articles.urls')),
     path('', include('django.contrib.auth.urls')),
     path('api-auth/', include('rest_framework.urls')),

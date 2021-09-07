@@ -11191,3 +11191,7 @@ f.popover {
     display: none !important;
   }
 }
+
+.my-font {
+  font-family: Vazir;
+}

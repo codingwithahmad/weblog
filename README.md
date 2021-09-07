@@ -159,3 +159,5 @@ this is a project for exercise Django framework
 - [x] edit templates/comment/comments html file for make custom comment section
 # section 73
 - [x] Start sending email for people who send comment to articles in comment/views/comments.py/ CreateComment class and form valid def
+# section 74 
+- [x] Install and setup star ratings app https://pypi.org/project/django-star-ratings/

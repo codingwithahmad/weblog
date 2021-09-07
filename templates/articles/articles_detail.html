@@ -1,4 +1,5 @@
 {% load static %}
+{% load ratings %}
 {% load comment_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +16,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet" />
+  <!-- django star rating package -->
+  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+  <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 </head>
 
 <body>
@@ -55,18 +59,19 @@
   <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
       <div class="row gx-4 gx-lg-5 align-items-center">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <img class="card-img-top mb-5 mb-md-0" src="{{ article.thumbnail.url }}" alt="..." />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
           <h1 class="display-5 fw-bolder">{{ article.title }}</h1>
           {% if article.is_special %}
                     <span class="badge bg-danger" style="font-size: 15px;">ویژه</span>
           {% endif %}
           <div class="fs-5 mb-5">
             <time>{{ article.jpublish }}</time>
+            <div><small>{% ratings article %}</small></div>
           </div>
-          <p class="lead">
+          <p class="lead my-font">
             {% if article.is_special %}
               {% if user.authenticated and user.is_special_user or user == article.author or user.is_superuser %}
                 {{ article.description|safe|linebreaks }}

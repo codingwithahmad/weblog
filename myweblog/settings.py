@@ -56,7 +56,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'crispy_forms'
+    'crispy_forms',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
@@ -163,3 +164,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') 
 
+STAR_RATINGS_STAR_HEIGHT = 16
