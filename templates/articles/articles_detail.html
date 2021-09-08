@@ -70,6 +70,7 @@
           <div class="fs-5 mb-5">
             <time>{{ article.jpublish }}</time>
             <div><small>{% ratings article %}</small></div>
+            <div><small>بازدید ها: {{ article.hits.count }}</small></div>
           </div>
           <p class="lead my-font">
             {% if article.is_special %}

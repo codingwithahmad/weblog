@@ -8,7 +8,6 @@ from account.models import User
 from django.contrib.contenttypes.fields import GenericRelation
 from comment.models import Comment
 
-# Create your models here.
 class ArticlesManager(models.Manager):
     def published(self):
         return self.filter(status="p")
@@ -17,8 +16,13 @@ class ArticlesManager(models.Manager):
 class CategoryManager(models.Manager):
     def active(self):
         return self.filter(status=True)
+# Create your models here.
+class IPAddress(models.Model):
+    ip_address = models.GenericIPAddressField(verbose_name="آدرس آی پی")
 
-
+    class Meta:
+        verbose_name = "نشانی آی پی"
+        verbose_name_plural = "نشانی های آی پی"
 
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name="عنوان")
@@ -29,7 +33,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name = "دسته بندی"
-        verbose_name_plural = "ذسته بندی ها"
+    verbose_name_plural = "دسته بندی ها"
         ordering = ['parent__id', 'position']
 
     def __str__(self):
@@ -59,6 +63,7 @@ class Articles(models.Model):
     is_special = models.BooleanField(default=False, verbose_name="مقاله ویژه")
     category = models.ManyToManyField(Category, verbose_name="دسته یندی", related_name="articles")
     comments = GenericRelation(Comment)
+    hits = models.ManyToManyField(IPAddress, related_name="hits", blank=True, verbose_name="بازدید ها")
 
     class Meta:
         verbose_name="مقاله"

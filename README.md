@@ -161,3 +161,11 @@ this is a project for exercise Django framework
 - [x] Start sending email for people who send comment to articles in comment/views/comments.py/ CreateComment class and form valid def
 # section 74 
 - [x] Install and setup star ratings app https://pypi.org/project/django-star-ratings/
+# section 75
+- [x] Create IPAddress model in articles/models.py
+- [x] Add hits manytomany fields based on IPAdress model to Articles model in articles/models.py
+- [x] Create middleware.py in articles app
+- [x] Create IPAddressMiddleware in middleware.py at aritcles app
+- [x] Add IPAddressMiddleware to other middleware at settings.py
+- [x] Change ArticlesDetail view in articles/views.py to set ip in hits for article if is not added 
+- [x] Finaly Add div tag like <div><small>بازدید ها: {{ article.hits.count }}</small></div> to articles_detail.html and list.html to showing views
