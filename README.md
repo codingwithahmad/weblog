@@ -169,3 +169,6 @@ this is a project for exercise Django framework
 - [x] Add IPAddressMiddleware to other middleware at settings.py
 - [x] Change ArticlesDetail view in articles/views.py to set ip in hits for article if is not added 
 - [x] Finaly Add div tag like <div><small>بازدید ها: {{ article.hits.count }}</small></div> to articles_detail.html and list.html to showing views
+# section 76 
+- [x] Add through="ArticleHit" for hits field in Articles model 
+- [x] Create ArticleHit model in models.py at articles app

@@ -33,7 +33,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name = "دسته بندی"
-    verbose_name_plural = "دسته بندی ها"
+        verbose_name_plural = "دسته بندی ها"
         ordering = ['parent__id', 'position']
 
     def __str__(self):
@@ -63,7 +63,7 @@ class Articles(models.Model):
     is_special = models.BooleanField(default=False, verbose_name="مقاله ویژه")
     category = models.ManyToManyField(Category, verbose_name="دسته یندی", related_name="articles")
     comments = GenericRelation(Comment)
-    hits = models.ManyToManyField(IPAddress, related_name="hits", blank=True, verbose_name="بازدید ها")
+    hits = models.ManyToManyField(IPAddress, through="ArticleHit", related_name="hits", blank=True, verbose_name="بازدید ها")
 
     class Meta:
         verbose_name="مقاله"
@@ -92,3 +92,8 @@ class Articles(models.Model):
 
     def get_absolute_url(self):
         return reverse("account:home")
+
+class ArticleHit(models.Model):
+    article = models.ForeignKey(Articles, on_delete=models.CASCADE)
+    ip_address = models.ForeignKey(IPAddress, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
