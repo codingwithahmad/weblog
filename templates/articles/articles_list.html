@@ -8,9 +8,9 @@
 
 
 {% block previous %}
-{% url 'articles:home' articles.previous_page_number %}
+{% url 'articles:home' page_obj.previous_page_number %}
 {% endblock %}
 
 {% block next %}
-{% url 'articles:home' articles.next_page_number %}
+{% url 'articles:home' page_obj.next_page_number %}
 {% endblock %}

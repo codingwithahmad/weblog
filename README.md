@@ -172,3 +172,7 @@ this is a project for exercise Django framework
 # section 76 
 - [x] Add through="ArticleHit" for hits field in Articles model 
 - [x] Create ArticleHit model in models.py at articles app
+# section 77 
+- [x] Change article list view to generic class
+- [x] Import Count and Q from django.db.models in articels/views.py
+- [x] Change ArticlesList model queryset to showing articles order by count of hits 

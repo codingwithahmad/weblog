@@ -5,23 +5,26 @@ from django.views.generic.list import ListView
 from django.core.paginator import Paginator
 from django.views.generic.detail import DetailView
 from account.mixins import AuthorAccessMixin
+from django.db.models import Count, Q
+from datetime import datetime, timedelta
 
 #Create your views here
 
-def home(request, page=1):
-    articles_list = Articles.objects.published()
-    paginator = Paginator(articles_list, 4)
-    articles = paginator.get_page(page)
-    content = {
-        "articles": articles
-    }
-    return render(request, 'articles/articles_list.html', content)
+# def home(request, page=1):
+#     articles_list = Articles.objects.published()
+#     paginator = Paginator(articles_list, 2)
+#     articles = paginator.get_page(page)
+#     content = {
+#         "articles": articles
+#     }
+#     return render(request, 'articles/articles_list.html', content)
 
-# class ArticlesList(ListView):
-#     #model = Articles
-#     context_object_name = "articles"
-#     queryset = Articles.objects.published()
-#     paginate_by = 2
+class ArticlesList(ListView):
+    last_month = datetime.today() - timedelta(days=30)
+    model = Articles
+    #context_object_name = "articles"
+    queryset = Articles.objects.published().annotate(count=Count('hits', filter= Q(articlehit__created__gt=last_month))).order_by('-count', '-publish')[:5]
+    paginate_by = 2
 
 # def details(request, slug):
 #     content = {

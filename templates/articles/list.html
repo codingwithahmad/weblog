@@ -1,5 +1,5 @@
 {% extends 'articles/base.html' %} {% load static %} {% block main %}
-{% for article in articles %}
+{% for article in object_list %}
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
@@ -25,13 +25,14 @@
 </section>
 {% endfor %}
 
-
+{% if is_paginated %}
 <div class="container px-4 px-lg-5 my-5">
-    {% if articles.has_previous %}
+    {% if page_obj.has_previous %}
     <a class="btn btn-outline-primary" href="{% block previous %}{% endblock %}">جدیدتر</a>
     {% endif %}
-    {% if articles.has_next %}
+    {% if page_obj.has_next %}
     <a class="btn btn-outline-primary" href="{% block next %}{% endblock %}">قدیمی تر</a>
     {% endif %}
 </div>
+{% endif %}
 {% endblock %}
