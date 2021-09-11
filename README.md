@@ -176,3 +176,9 @@ this is a project for exercise Django framework
 - [x] Change article list view to generic class
 - [x] Import Count and Q from django.db.models in articels/views.py
 - [x] Change ArticlesList model queryset to showing articles order by count of hits 
+# section 78
+- [x] Make popular_articels at templates/articels/partials
+- [x] Create an inclusion_tag in base_tags.py for popular_articels
+- [x] Send popular_articels to popular_articels.html by inclusion_tag 
+- [x] Set {% popular_articels %} block at articles_list.html and articles_detail.html
+ 

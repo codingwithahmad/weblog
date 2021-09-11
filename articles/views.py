@@ -20,10 +20,9 @@ from datetime import datetime, timedelta
 #     return render(request, 'articles/articles_list.html', content)
 
 class ArticlesList(ListView):
-    last_month = datetime.today() - timedelta(days=30)
     model = Articles
     #context_object_name = "articles"
-    queryset = Articles.objects.published().annotate(count=Count('hits', filter= Q(articlehit__created__gt=last_month))).order_by('-count', '-publish')[:5]
+    queryset = Articles.objects.published()
     paginate_by = 2
 
 # def details(request, slug):
