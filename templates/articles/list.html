@@ -1,5 +1,6 @@
 {% extends 'articles/base.html' %} {% load static %} {% load base_tags %} {% block main %}
 {% popular_articles %}
+{% hot_articles %}
 {% for article in object_list %}
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">

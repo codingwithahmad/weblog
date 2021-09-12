@@ -181,4 +181,8 @@ this is a project for exercise Django framework
 - [x] Create an inclusion_tag in base_tags.py for popular_articels
 - [x] Send popular_articels to popular_articels.html by inclusion_tag 
 - [x] Set {% popular_articels %} block at articles_list.html and articles_detail.html
- 
+# section 79
+- [x] Rename popular_articles.html to sidebar.html and change this template to make reuseable for another inclusion_tag
+- [x] Make another inclusio_tag with hot_articles name 
+- [x] hot articles inclusion_tag send most commented articels in month to sidebar.html template
+- [x] for first time in project user contenttype framework 

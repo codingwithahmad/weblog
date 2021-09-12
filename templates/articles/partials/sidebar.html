@@ -1,11 +1,11 @@
 <div class="container px-4 px-lg-5 my-5">
 	<div class="populate_articles_box">
 		<h1 class="h4">
-			مقالات پر بازدید
+			{{ title }}
 		</h1>
 		<hr>
 
-		{% for a in popular_articles %}
+		{% for a in articles %}
 		<div>
 			<a href="{% url 'articles:details' a.slug %}">{{ a.title }}</a>
 		</div>
