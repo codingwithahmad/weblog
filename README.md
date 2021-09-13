@@ -186,3 +186,8 @@ this is a project for exercise Django framework
 - [x] Make another inclusio_tag with hot_articles name 
 - [x] hot articles inclusion_tag send most commented articels in month to sidebar.html template
 - [x] for first time in project user contenttype framework 
+# section 80
+- [x] Create SearchList view in aritcles/views.py
+- [x] Create search_list.html at templates/articles
+- [x] Add search section to navbar_category at templates/articles/partials
+- [x] Add url for SearchList view in urls.py at articles app

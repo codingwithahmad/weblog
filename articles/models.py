@@ -7,6 +7,8 @@ from django.utils.html import format_html
 from account.models import User
 from django.contrib.contenttypes.fields import GenericRelation
 from comment.models import Comment
+from star_ratings.models import Rating, UserRating
+
 
 class ArticlesManager(models.Manager):
     def published(self):
@@ -63,8 +65,8 @@ class Articles(models.Model):
     is_special = models.BooleanField(default=False, verbose_name="مقاله ویژه")
     category = models.ManyToManyField(Category, verbose_name="دسته یندی", related_name="articles")
     comments = GenericRelation(Comment)
+    ratings = GenericRelation(Rating, related_query_name='articles')
     hits = models.ManyToManyField(IPAddress, through="ArticleHit", related_name="hits", blank=True, verbose_name="بازدید ها")
-
     class Meta:
         verbose_name="مقاله"
         verbose_name_plural="مقالات"
@@ -97,3 +99,6 @@ class ArticleHit(models.Model):
     article = models.ForeignKey(Articles, on_delete=models.CASCADE)
     ip_address = models.ForeignKey(IPAddress, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
+
+
+

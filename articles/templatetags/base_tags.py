@@ -34,6 +34,15 @@ def hot_articles():
     }
 
 
+@register.inclusion_tag('articles/partials/sidebar.html')
+def big_score_articles():
+    last_month = datetime.today() - timedelta(days=30)
+    articles = Articles.objects.published().annotate(count=Count('ratings', filter=Q(ratings__created__gt=last_month))).order_by('-count' ,'-ratings__average')
+    return {    "articles": articles,
+                "title": "مقالات امتیاز بالای ماه",
+    }
+
+
 
 @register.inclusion_tag('registration/partials/link.html')
 def link(request, link_name, content, classes):

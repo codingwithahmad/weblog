@@ -63,3 +63,17 @@ def category_articles(request, slug):
     }
     return render(request, 'articles/category.html', content)
 
+
+
+class SearchList(ListView):
+    template_name = "articles/search_list.html"
+    paginate_by = 2
+
+    def get_queryset(self):
+        search = self.request.GET.get('q')
+        return Articles.objects.filter(Q(description__icontains=search) | Q(title__icontains=search))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['search'] = self.request.GET.get('q')
+        return context

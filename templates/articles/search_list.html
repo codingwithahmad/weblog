@@ -1,0 +1,25 @@
+{% extends 'articles/list.html' %}
+
+{% block header %}
+
+<div class="container">
+	<h3 class="alert alert-primary text-center">جستوجو: {{ search }}</h3>
+</div>
+
+{% endblock %}
+
+
+{% block category %}
+{% for category in article.category.active %}
+<div class="d-flex">#{{ category }}</div>
+{% endfor %}
+{% endblock %}
+
+
+{% block previous %}
+{% url 'articles:search' page_obj.previous_page_number %}?q={{ search }}
+{% endblock %}
+
+{% block next %}
+{% url 'articles:search' page_obj.next_page_number %}?q={{ search }}
+{% endblock %}
