@@ -1,4 +1,4 @@
-{% extends 'articles/base.html' %} {% load static %} {% load base_tags %} {% block main %}
+{% extends 'articles/base.html' %} {% load static %} {% load base_tags %} {% load humanize %} {% block main %}
 {% popular_articles %}
 {% hot_articles %}
 {% big_score_articles %}
@@ -19,7 +19,7 @@
                 </h1>
                 <div><small>بازدید ها: {{ article.hits.count }}</small></div>
                 <div class="fs-5 mb-5">
-                    <time>{{ article.jpublish }}</time>
+                    <time>{{ article.publish|naturaltime }}</time>
                 </div>
                 <p class="lead">{{ article.description|striptags|truncatewords:30 }}</p>
                 {% block category %}{% endblock %}

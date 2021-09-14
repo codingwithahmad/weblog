@@ -1,6 +1,7 @@
 {% load static %}
 {% load ratings %}
 {% load base_tags %}
+{% load humanize %}
 {% load comment_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +72,7 @@
                     <span class="badge bg-danger" style="font-size: 15px;">ویژه</span>
           {% endif %}
           <div class="fs-5 mb-5">
-            <time>{{ article.jpublish }}</time>
+            <time>{{ article.publish|naturaltime }}</time>
             <div><small>{% ratings article %}</small></div>
             <div><small>بازدید ها: {{ article.hits.count }}</small></div>
           </div>

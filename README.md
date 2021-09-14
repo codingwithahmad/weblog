@@ -191,3 +191,7 @@ this is a project for exercise Django framework
 - [x] Create search_list.html at templates/articles
 - [x] Add search section to navbar_category at templates/articles/partials
 - [x] Add url for SearchList view in urls.py at articles app
+# section 81
+- [x] Add humanize app to settings.py
+- [x] Set naturaltime templatetag to list.html and articles_detail.html
+- [x] https://simpleisbetterthancomplex.com/tips/2016/05/09/django-tip-2-humanize.html
